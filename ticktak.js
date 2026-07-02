@@ -8,6 +8,8 @@ let message = document.querySelector("#message");
 let turnO=true;
 
 
+let count=0;
+
 //we will use 2 d array
 
 const winPatterns=[
@@ -26,6 +28,7 @@ const winPatterns=[
     turnO=true;
     enableBoxes();
     msgContainer.classList.add("hide");
+    count=0;
   }
 
 
@@ -48,7 +51,7 @@ boxes.forEach((box) =>{
         }
         box.disabled=true;//so that when we click box again value does not change
 
-
+         count++;
         checkWin();
     })
 })
@@ -73,6 +76,7 @@ const diableBoxes=()=>{
 //to check for the wiin 
 const checkWin=()=>{
 
+    let win=false;
     for( let pattern of winPatterns){
 
       // console.log(pattern[0],pattern[1],pattern[2]);
@@ -89,12 +93,15 @@ const checkWin=()=>{
             if(pos1val===pos2val &&pos2val===pos3val){
               
                 console.log("winner");
-    
+                win=true;
                 ShowWinner(pos1val);//calling show winer to display winner 
 
      
             }
-            
+            else if(count==9 && !win)
+            {
+                showDraw();
+            }
          }
     }
 }
@@ -102,10 +109,20 @@ const checkWin=()=>{
 
   const  ShowWinner=(winner)=>{
 
+    
+  
     message.innerText=`Congratulation ,winner is ${winner}`;
+
     msgContainer.classList.remove("hide");
           diableBoxes();
-  }
+}
+
+//draw function 
+
+const showDraw=()=>{
+    message.innerText=`Game Draw`;
+    msgContainer.classList.remove("hide");
+}
 
 
 //calling the resetfame function for both buttnons 
