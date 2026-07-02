@@ -82,32 +82,48 @@ display: none;
 } 
 @media (max-width: 600px) {
 
-    .game {
-        width: 90vw;
-        height: 90vw;
+    .msg{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 5vmin;
+        background-color: rgba(36, 22, 35, 0.95);
+        z-index: 1000;
     }
 
-    .box {
-        width: 28vw;
-        height: 28vw;
-        font-size: 10vw;
+    .game{
+        width: 95vw;
+        height: 95vw;
+        gap: 2vw;
     }
 
-    h1 {
+    .box{
+        width: 30vw;
+        height: 30vw;
+        font-size: 12vw;
+    }
+
+    #message{
         font-size: 8vw;
-    }
-
-    #message {
-        font-size: 7vw;
+        text-align: center;
+        padding: 0 5vw;
     }
 
     .reset,
-    #newButton {
+    #newButton{
         font-size: 1rem;
-        padding: 0.8rem;
+        padding: 0.8rem 1rem;
     }
 
-    .msg {
-        gap: 5vw;
+    h1{
+        font-size: 8vw;
     }
 }
