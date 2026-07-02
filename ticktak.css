@@ -80,3 +80,34 @@ color:white;
 display: none;
 
 } 
+@media (max-width: 600px) {
+
+    .game {
+        width: 90vw;
+        height: 90vw;
+    }
+
+    .box {
+        width: 28vw;
+        height: 28vw;
+        font-size: 10vw;
+    }
+
+    h1 {
+        font-size: 8vw;
+    }
+
+    #message {
+        font-size: 7vw;
+    }
+
+    .reset,
+    #newButton {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .msg {
+        gap: 5vw;
+    }
+}
