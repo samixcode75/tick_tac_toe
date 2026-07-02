@@ -82,20 +82,17 @@ display: none;
 } 
 @media (max-width: 600px) {
 
-    .msg{
+    .msg:not(.hide){
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
 
-        display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        gap: 5vmin;
-        background-color: rgba(36, 22, 35, 0.95);
+        background-color: rgba(36,22,35,0.95);
         z-index: 1000;
     }
 
@@ -114,13 +111,6 @@ display: none;
     #message{
         font-size: 8vw;
         text-align: center;
-        padding: 0 5vw;
-    }
-
-    .reset,
-    #newButton{
-        font-size: 1rem;
-        padding: 0.8rem 1rem;
     }
 
     h1{
